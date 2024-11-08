@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f9f9f9;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+<header>
+        <center>
+        <h1>Welcome to the Hate Speech Detection App</h1>
+            </center>
+
+    </header>
+    <div class="container">
+        <h1>Result</h1>
+        <p><strong>Transcription:</strong> {{ transcription }}</p>
+        <p><strong>Hate Speech Status:</strong> {{ hate_speech_status }}</p>
+        <h2>Hate Speech Detection Results</h2>
+        <ul>
+            {% for result in results %}
+                <li>{{ result['label'] }} - Score: {{ result['score'] }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <footer>
+        &copy; 2024 Hate Speech Detection App
+    </footer>
+</body>
+</html>
